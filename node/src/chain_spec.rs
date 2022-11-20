@@ -1,4 +1,4 @@
-use appchain_barnacle_runtime::{
+use sam_evm_appchain_runtime::{
 	currency::EBAR,
 	opaque::{Block, SessionKeys},
 	AccountId, BabeConfig, Balance, BalancesConfig, GenesisAccount, GenesisConfig, GrandpaConfig,
@@ -15,7 +15,7 @@ use sp_consensus_babe::AuthorityId as BabeId;
 use sp_core::{Pair, Public};
 use sp_finality_grandpa::AuthorityId as GrandpaId;
 
-use appchain_barnacle_runtime::{EVMConfig, EthereumConfig};
+use sam_evm_appchain_runtime::{EVMConfig, EthereumConfig};
 use std::str::FromStr;
 
 // The URL for the telemetry server.
@@ -220,7 +220,7 @@ fn testnet_genesis(
 		sudo: SudoConfig { key: Some(root_key) },
 		babe: BabeConfig {
 			authorities: vec![],
-			epoch_config: Some(appchain_barnacle_runtime::BABE_GENESIS_EPOCH_CONFIG),
+			epoch_config: Some(sam_evm_appchain_runtime::BABE_GENESIS_EPOCH_CONFIG),
 		},
 		im_online: ImOnlineConfig { keys: vec![] },
 		grandpa: GrandpaConfig { authorities: vec![] },
